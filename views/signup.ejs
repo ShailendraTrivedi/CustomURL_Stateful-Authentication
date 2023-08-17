@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="min-h-screen min-w-screen">
+        <div class="flex flex-col gap-10 justify-center items-center w-full h-full">
+            <span class="text-5xl font-bold">SignUp Page</span>
+            <form action="user/signup" method="post"
+                class="flex flex-col gap-10 p-8 w-[30rem] border-2 border-black rounded">
+                <div class="flex justify-between">
+                    <label for="">Name:</label>
+                    <input name="name" type="text" class="w-[80%] border-2 border-black" value="">
+                </div>
+                <div class="flex justify-between">
+                    <label for="">Email:</label>
+                    <input name="email" type="text" class="w-[80%] border-2 border-black" value="">
+                </div>
+                <div class="flex justify-between">
+                    <label for="">Password:</label>
+                    <input name="password" type="password" class="w-[80%] border-2 border-black" value="">
+                </div>
+                <button type="submit" class="bg-blue-700 w-full rounded text-white p-2">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

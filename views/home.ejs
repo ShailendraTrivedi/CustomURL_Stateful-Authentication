@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="min-h-screen min-w-screen">
+        <div class="flex flex-col justify-center items-center">
+            <h1 class="text-5xl">URL Shortener</h1>
+            <div>
+                <form action="/url" method="post">
+                    <div class="flex flex-col gap-2 justify-between border-2 border-black p-10 w-[40rem]">
+                        <label for="" class="font-bold">Enter Original Url: </label>
+                        <input type="text" name="url" class="w-full border-2 border-black " placeholder="Enter URL...">
+                        <button type="submit" class="border-2 border-black bg-gray-100 w-full">Generate</button>
+                        <div>
+                            <% if (locals.shortId) { %>
+                                <p>
+                                    URL generated : <span class="font-bold">http://localhost:5000/render/<%=
+                                            shortId %></span>
+                                </p>
+                                <% } %>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <% if (locals.allurl) { %>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Short Id</th>
+                                <th>Redirect Url</th>
+                                <th>Clicks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% allurl.forEach((item, i)=> { %>
+                                <tr>
+                                    <td>
+                                        <%= i + 1 %>
+                                    </td>
+                                    <td>
+                                        http://localhost:5000/render/<%= item.shortId %>
+                                    </td>
+                                    <td>
+                                        <%= item.redirectURL %>
+                                    </td>
+                                    <td>
+                                        <%= item.visitHistory.length %>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
