@@ -17,7 +17,7 @@ CustomURL with Stateful Authentication is a web application that provides URL sh
 1. Clone the repository using `git clone https://github.com/ShailendraTrivedi/CustomURL_Stateful-Authentication.git`.
 2. Navigate to the project directory: `cd CustomURL_Stateful-Authentication`.
 3. Open the project folder in your preferred code editor (e.g., VS Code).
-####Configuration
+#### Configuration
 1. Create a .env file in the project root directory.
 2. Inside the .env file, add the following line: `DATABASE_URL=Your_Database_URL`
 * Replace Your_Database_URL with your actual MongoDB database connection string.
